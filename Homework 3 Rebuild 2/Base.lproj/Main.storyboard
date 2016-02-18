@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10089" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ctx-6j-8uG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework_3_Rebuild_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72G-p8-DtF">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7dR-EY-qo8"/>
+                                </constraints>
+                                <state key="normal" title="Show Table View"/>
+                                <connections>
+                                    <action selector="showTableButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypB-md-yzL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Me to Get a Modal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4o-5M-KtR">
+                                <rect key="frame" x="150" y="125" width="300" height="150"/>
+                                <color key="backgroundColor" red="0.42630976438522339" green="0.57852119207382202" blue="0.91045910120010376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2dd-7I-c1G"/>
+                                    <constraint firstAttribute="height" constant="150" id="aGK-F1-2hc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QmQ-z0-yOv" appends="YES" id="X91-dl-xXv"/>
+                                </connections>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="72G-p8-DtF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J2d-3C-wcG"/>
+                            <constraint firstItem="72G-p8-DtF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JbZ-tt-Kl1"/>
+                            <constraint firstItem="72G-p8-DtF" firstAttribute="top" secondItem="j4o-5M-KtR" secondAttribute="bottom" constant="10" id="bLa-63-dPC"/>
+                            <constraint firstItem="j4o-5M-KtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zST-v3-wpD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HSa-St-vwV"/>
+                    <connections>
+                        <outlet property="swipeModal" destination="QmQ-z0-yOv" id="dZH-hB-h7E"/>
+                        <segue destination="Z0u-SR-gbI" kind="show" identifier="pushToTable" id="Qxt-i1-jxM"/>
+                        <segue destination="Ul3-ey-7wL" kind="presentation" identifier="swipeGestureTwo" id="xIQ-wE-4Uv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="QmQ-z0-yOv">
+                    <connections>
+                        <action selector="swipeAction:" destination="BYZ-38-t0r" id="C87-Pg-R6T"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="895" y="1017"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="X8o-sx-BTa">
+            <objects>
+                <viewController storyboardIdentifier="ModalViewController" id="Ul3-ey-7wL" customClass="ModalViewController" customModule="Homework_3_Rebuild_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1lb-IU-vGQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="OYn-ko-KOd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Guf-mr-VLh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_7713.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-oG-Lff">
+                                <rect key="frame" x="180" y="149" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="VLW-gT-iaS"/>
+                                    <constraint firstAttribute="height" constant="128" id="ofH-Ri-e8S"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSx-MT-48n">
+                                <rect key="frame" x="250" y="303" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.99611729383468628" green="0.99587720632553101" blue="0.99216729402542114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="xxW-nI-K88"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissView:" destination="Ul3-ey-7wL" eventType="touchUpInside" id="kpx-2i-IoQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0071232855330000001" green="0.0" blue="0.1635921139" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DSx-MT-48n" firstAttribute="top" secondItem="fxe-oG-Lff" secondAttribute="bottom" constant="26" id="5y3-44-cxf"/>
+                            <constraint firstItem="fxe-oG-Lff" firstAttribute="top" secondItem="1lb-IU-vGQ" secondAttribute="bottom" constant="129" id="ZqA-xe-IdH"/>
+                            <constraint firstItem="fxe-oG-Lff" firstAttribute="centerX" secondItem="Guf-mr-VLh" secondAttribute="centerX" id="o0o-YJ-rCs"/>
+                            <constraint firstItem="DSx-MT-48n" firstAttribute="centerX" secondItem="fxe-oG-Lff" secondAttribute="centerX" id="yna-rQ-UFN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAq-OK-t1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="1684"/>
+        </scene>
+        <!--Array Table View Controller-->
+        <scene sceneID="wrj-mz-SUx">
+            <objects>
+                <tableViewController id="Z0u-SR-gbI" customClass="ArrayTableViewController" customModule="Homework_3_Rebuild_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ly8-zM-Wo8" customClass="ArrayTableViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellString" textLabel="n3t-Fq-0sl" style="IBUITableViewCellStyleDefault" id="CSR-7q-BOd">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CSR-7q-BOd" id="58d-kr-5K4">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n3t-Fq-0sl">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="89"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z0u-SR-gbI" id="qti-FR-z0e"/>
+                            <outlet property="delegate" destination="Z0u-SR-gbI" id="ES4-X7-bMO"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScM-Dq-cBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="1017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CrU-UV-RIH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ctx-6j-8uG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vo1-Dp-ao4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3Dz-FM-bqT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oma-Wv-UNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179" y="1017"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IMG_7713.JPG" width="4898" height="3265"/>
+    </resources>
+</document>
